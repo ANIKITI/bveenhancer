@@ -76,7 +76,7 @@ namespace SurroundSound
         public static void Hook060000E8(string A_0, string A_1, int A_2, DirectSound directsound, ref SecondarySoundBuffer[] array)
         {
             SoundBufferDescription description = default(SoundBufferDescription);
-            description.Flags = (BufferFlags.ControlVolume | BufferFlags.ControlFrequency | BufferFlags.Control3D);
+            description.Flags = (BufferFlags.ControlVolume | BufferFlags.ControlFrequency | BufferFlags.Control3D | BufferFlags.GlobalFocus);
             description.AlgorithmFor3D = DirectSound3DAlgorithmGuid.LightHrt3DAlgorithm;
             array = new SecondarySoundBuffer[A_2];
             Buffer3D buf3d = new Buffer3D();
@@ -217,7 +217,7 @@ namespace SurroundSound
         public static void Hook06000796(WaveStream waveStream, DirectSound directsound, ref SecondarySoundBuffer buffer)
         {
             SoundBufferDescription description = default(SoundBufferDescription);
-            description.Flags = (BufferFlags.ControlVolume | BufferFlags.ControlFrequency | BufferFlags.Control3D);
+            description.Flags = (BufferFlags.ControlVolume | BufferFlags.ControlFrequency | BufferFlags.Control3D | BufferFlags.GlobalFocus);
             description.AlgorithmFor3D = DirectSound3DAlgorithmGuid.LightHrt3DAlgorithm;
             description.Format = waveStream.Format;
             int num2 = 1;
@@ -277,7 +277,7 @@ namespace SurroundSound
         public static void Hook06000799(WaveStream waveStream, DirectSound directsound, ref SecondarySoundBuffer buffer)
         {
             SoundBufferDescription description = default(SoundBufferDescription);
-            description.Flags = (BufferFlags.ControlVolume | BufferFlags.ControlFrequency | BufferFlags.Control3D);
+            description.Flags = (BufferFlags.ControlVolume | BufferFlags.ControlFrequency | BufferFlags.Control3D | BufferFlags.GlobalFocus);
             description.AlgorithmFor3D = DirectSound3DAlgorithmGuid.LightHrt3DAlgorithm;
             description.Format = waveStream.Format;
             Buffer3D buf3d = new Buffer3D();
